@@ -19,11 +19,18 @@ class Program:
                 else:
                     print(factorial(n))
             elif(opcion==2):
+                n=
 
 
-    def Factorial(n):
-        if n==0:
-            return 1;
-        else:
-            return n*factorial(n-1)
-    def SumaNaturales(n):
+        def Factorial(n):
+            if n==0:
+                return 1
+            else:
+                return n*factorial(n-1)
+        def numeros_naturales(n):
+            if n==1:
+                return 1
+            else:
+                return n+numeros_naturales(n-1)
+
+
