@@ -22,6 +22,9 @@ class Program:
             elif opcion==2:
                 n=int(input("Ingrese numero limite"))
                 print(Program.numeros_naturales(n))
+            elif opcion==3:
+                n=int(input("Ingrese numero para calcular Fibonacci"))
+                print(Program.fibonacci(n))
 
     @staticmethod
     def factorial(n):
@@ -35,5 +38,13 @@ class Program:
             return 1
         else:
             return o + Program.numeros_naturales(o-1)
+    @staticmethod
+    def fibonacci(n):
+        if n==0:
+            return 0
+        elif n==1:
+            return 1
+        else:
+            return n+Program.fibonacci(n-1)
 Program.main()
 
