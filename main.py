@@ -2,7 +2,8 @@ from math import factorial
 
 
 class Program:
-    def static(main):
+    @staticmethod
+    def main():
         opcion=0
         while opcion!=8:
             print("""1. Calcular Factorial
@@ -12,26 +13,27 @@ class Program:
             5. Invertir una cadena de texto
             6. Calcular la potencia de un numero base""")
             opcion=int(input("Ingrese la opcion: "))
-            if (opcion==1):
+            if opcion==1:
                 n=int(input("Ingrese el numero a calcular el factorial: "))
                 if n<0:
                     print("Ingrese un numero entero positivo")
                 else:
-                    print(factorial(n))
-            elif(opcion==2):
+                    print(Program.factorial(n))
+            elif opcion==2:
                 n=int(input("Ingrese numero limite"))
-                print(numeros_naturales(n))
+                print(Program.numeros_naturales(n))
 
-
-            def factorial(n):
-                if n==0:
-                    return 1
-                else:
-                    return n*factorial(n-1)
-            def numeros_naturales(n):
-                if n==1:
-                    return 1
-                else:
-                    return n+numeros_naturales(n-1)
-
+    @staticmethod
+    def factorial(n):
+        if n==0:
+            return 1
+        else:
+            return n*Program.factorial(n-1)
+    @staticmethod
+    def numeros_naturales(o):
+        if o==1:
+            return 1
+        else:
+            return o + Program.numeros_naturales(o-1)
+Program.main()
 
